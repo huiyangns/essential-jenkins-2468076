@@ -14,11 +14,11 @@ pipeline {
         cron '@midnight'
     }
     stages {
-        // stage('Relative path') {
-        //     steps {
-        //         bat("..\\scripts\\fibonacci.bat ${env.NUMBER}")
-        //     }
-        // } Ch03\03_03-run-scripts-from-the-pipeline\scripts\fibonacci.bat
+        stage('Relative path') {
+            steps {
+                bat(".\\Ch03\\03_03-run-scripts-from-the-pipeline\\scripts\\fibonacci.bat ${env.NUMBER}")
+            }
+        } Ch03\03_03-run-scripts-from-the-pipeline\scripts\fibonacci.bat
         stage('Full path') {
             steps {
                 bat("${env.WORKSPACE}\\Ch03\\03_03-run-scripts-from-the-pipeline\\scripts\\fibonacci.bat ${env.NUMBER}")
@@ -27,7 +27,7 @@ pipeline {
         stage('Change directory') {
             steps {
                 dir("${env.WORKSPACE}\\Ch03\\03_03-run-scripts-from-the-pipeline\\scripts"){
-                    bat("..\\fibonacci.bat ${env.NUMBER}")
+                    bat(".\\fibonacci.bat ${env.NUMBER}")
                 }
             }
         }
