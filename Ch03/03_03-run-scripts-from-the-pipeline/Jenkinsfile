@@ -18,7 +18,7 @@ pipeline {
             steps {
                 bat(".\\Ch03\\03_03-run-scripts-from-the-pipeline\\scripts\\fibonacci.bat ${env.NUMBER}")
             }
-        } Ch03\03_03-run-scripts-from-the-pipeline\scripts\fibonacci.bat
+        } 
         stage('Full path') {
             steps {
                 bat("${env.WORKSPACE}\\Ch03\\03_03-run-scripts-from-the-pipeline\\scripts\\fibonacci.bat ${env.NUMBER}")
