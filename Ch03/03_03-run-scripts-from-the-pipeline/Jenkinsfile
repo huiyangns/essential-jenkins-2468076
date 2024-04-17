@@ -16,18 +16,18 @@ pipeline {
     stages {
         stage('Relative path') {
             steps {
-                bat(".\\Ch03\\03_03-run-scripts-from-the-pipeline\\scripts\\fibonacci.bat ${env.NUMBER}")
+                bat(".\\Ch03\\03_03-run-scripts-from-the-pipeline\\scripts\\fibonacci.bat ${params.NUMBER}")
             }
         } 
         stage('Full path') {
             steps {
-                bat("${env.WORKSPACE}\\Ch03\\03_03-run-scripts-from-the-pipeline\\scripts\\fibonacci.bat ${env.NUMBER}")
+                bat("${env.WORKSPACE}\\Ch03\\03_03-run-scripts-from-the-pipeline\\scripts\\fibonacci.bat ${params.NUMBER}")
             }
         }
         stage('Change directory') {
             steps {
                 dir("${env.WORKSPACE}\\Ch03\\03_03-run-scripts-from-the-pipeline\\scripts"){
-                    bat(".\\fibonacci.bat ${env.NUMBER}")
+                    bat(".\\fibonacci.bat ${params.NUMBER}")
                 }
             }
         }
